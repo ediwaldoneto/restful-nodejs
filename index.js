@@ -48,3 +48,17 @@ server.post('/createclient', (req, res, next) => {
     }, next)
     
 });
+
+server.put('/updateclient/:id', (req, res, next) => {
+    
+  const { id } = req.params;
+
+  knex('cliente')
+      .where('id', id)
+      .update(req.body)
+      .then((dados) => {
+          if(!dados) return res.send(new errs.BadRequestError('nada foi encontrado'))
+          res.send('dados atualizados');
+      }, next)
+      
+});
