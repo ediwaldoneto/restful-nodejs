@@ -62,3 +62,17 @@ server.put('/updateclient/:id', (req, res, next) => {
       }, next)
       
 });
+
+server.del('/deleteclient/:id', (req, res, next) => {
+    
+  const { id } = req.params;
+
+  knex('cliente')
+      .where('id', id)
+      .delete()
+      .then((dados) => {
+          if(!dados) return res.send(new errs.BadRequestError('nada foi encontrado'))
+          res.send('dados excluidos');
+      }, next)
+      
+});
