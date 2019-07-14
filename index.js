@@ -76,3 +76,8 @@ server.del('/deleteclient/:id', (req, res, next) => {
       }, next)
       
 });
+
+//Usei para visualizar as querys no console
+knex.on( 'query', function( queryData ) {
+    console.log( queryData );
+});

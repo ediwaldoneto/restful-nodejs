@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "knex": "^0.18.1",
+    "knex-log": "^2.2.0",
     "mysql": "github:mysqljs/mysql",
     "restify": "^8.3.3",
     "restify-errors": "^8.0.0"
